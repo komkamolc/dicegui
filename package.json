@@ -1,5 +1,8 @@
 {
-    "name"    : "DICe",
-    "version" : "2.0.0",
-    "main"    : "main.js"
+    "name": "DICe",
+    "version": "2.0.0",
+    "main": "main.js",
+    "dependencies": {
+        "@electron/remote": "^2.0.8"
+    }
 }

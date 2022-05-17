@@ -1,3 +1,4 @@
+require('@electron/remote/main').initialize();
 const {app, BrowserWindow} = require('electron')
 var path = require('path')
 
@@ -9,13 +10,16 @@ function createWindow () {
     // Create the browser window.
     win = new BrowserWindow({
         webPreferences: {
-            nodeIntegration: true
+            nodeIntegration: true,
+            contextIsolation: false
         },
         width: 800,
         height: 600,
         icon: path.join(__dirname, 'images/icons/png/icon_32x32@2x.png')
     })
 
+    require("@electron/remote/main").enable(win.webContents)
+    
     win.maximize()
     
     // and load the index.html of the app.
